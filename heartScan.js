@@ -12,7 +12,7 @@ const Ganglion = require('openbci-ganglion').Ganglion;
 const ganglion = new  Ganglion();
 
 
-server.listen(8080, ()=>{
+server.listen(3001, ()=>{
   console.log('Listening For  Client Connection');
 });
 
@@ -70,17 +70,8 @@ Function to actually pass the data from the socket to the front end react
 function pass_data(transferdata){
 
 
-// cipher data
-
-
-
-
-
-
-
-
-  io.emit("arraytransfer", transferdata);
+console.log("\n sending data: \n" + transferdata);
+  io.emit("EKG", transferdata);
 
 }
-
 
